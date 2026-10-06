@@ -17,7 +17,10 @@ app.use("/api/admin", require("./routes/adminRoutes"));
 app.use("/api", notFound);
 
 // Also serves the website, so you can open http://localhost:5000
-app.use(express.static(path.join(__dirname, "../frontend")));
+const fs = require("fs");
+const frontendDir = path.join(__dirname, "../frontend");
+console.log("Frontend folder:", frontendDir, "exists:", fs.existsSync(frontendDir));
+app.use(express.static(frontendDir));
 
 app.use(errorHandler);
 
