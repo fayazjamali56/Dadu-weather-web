@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login — Dadu Weather</title>
+<meta name="description" content="Log in to your Dadu Weather account." />
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html"><span class="mark"></span> Dadu Weather</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="register.html">Register</a>
+      <a class="btn btn-primary" href="login.html" aria-current="page">Login</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="register.html">Register</a><a href="login.html">Login</a>
+  </div>
+</header>
+<div class="ajrak-strip"></div>
+
+<main class="form-page">
+  <h1>Log in</h1>
+  <p>Welcome back to Dadu Weather.</p>
+
+  <div class="form-card">
+    <div class="ajrak-strip"></div>
+    <div class="form-card-body">
+      <div class="form-status" data-form-status></div>
+      <form id="login-form" novalidate>
+        <div class="form-row">
+          <label for="identifier">Email or phone</label>
+          <input type="text" id="identifier" name="identifier" />
+          <p class="form-error" id="err-identifier"></p>
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
+          <p class="form-error" id="err-password"></p>
+        </div>
+        <div class="form-row" style="display:flex;justify-content:space-between;align-items:center;">
+          <label class="form-check" for="remember" style="margin-bottom:0;">
+            <input type="checkbox" id="remember" name="remember" style="width:auto;" /> Remember me
+          </label>
+          <a href="#" style="font-size:0.9rem;color:var(--madder-600);">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Log in</button>
+      </form>
+      <p class="form-footer-link">New here? <a href="register.html">Create an account</a></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p class="footer-fine">© <span data-year></span> Dadu Weather. Created by Fayaz Jamali.</p></div>
+</footer>
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/main.js"></script>
+<script>initLoginForm(document.getElementById("login-form"));</script>
+</body>
+</html>

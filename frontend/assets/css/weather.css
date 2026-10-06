@@ -1,0 +1,21 @@
+/* Weather detail page + live data blocks */
+.weather-error-banner{padding:12px 16px;margin-bottom:18px;border-radius:var(--r-sm);background:#fbe3e1;color:var(--bad);font-weight:500}
+.hero-now-body .temp,.hero-now-body .value{font-family:var(--font-display);font-size:4rem;font-weight:700;line-height:1}
+.hero-now-body .cond{font-size:1.1rem;opacity:.9}
+.hero-now-body .meta,.hero-now-body .feels{opacity:.7;font-size:.92rem}
+
+.hourly-scroll{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--indigo-500) var(--cotton-200)}
+.hourly-scroll>*{flex:0 0 86px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);text-align:center;font-size:.9rem}
+.hourly-scroll>*:first-child{background:var(--indigo-900);color:var(--cotton-100);border-color:var(--indigo-900)}
+.hourly-scroll [class*="temp"]{font-family:var(--font-display);font-weight:700;font-size:1.25rem}
+.hourly-scroll [class*="time"]{color:var(--muted);font-size:.82rem}
+.hourly-scroll>*:first-child [class*="time"]{color:#c9cfe6}
+
+.forecast-list{display:grid;gap:10px}
+.forecast-list>*{display:grid;grid-template-columns:110px 40px 1fr auto;align-items:center;gap:16px;padding:14px 20px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md)}
+.forecast-list>*:first-child{border-color:var(--madder-500)}
+.forecast-list [class*="day"]{font-weight:600;color:var(--indigo-900)}
+.forecast-list [class*="cond"]{color:var(--muted)}
+.forecast-list [class*="temp"],.forecast-list [class*="hi"]{font-family:var(--font-display);font-weight:700;font-size:1.1rem;white-space:nowrap}
+.forecast-list [class*="lo"]{color:var(--muted);font-weight:500}
+.forecast-list [class*="rain"]{color:var(--indigo-500);font-size:.9rem}

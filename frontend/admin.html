@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Dadu Weather</title>
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/admin.css" />
+</head>
+<body class="admin-body">
+<div class="admin">
+
+  <aside class="side">
+    <a class="side-logo" href="index.html"><span class="mark"></span> Dadu Weather</a>
+    <p class="side-tag">Admin portal</p>
+    <nav class="side-nav">
+      <button class="active" data-tab="dashboard">Dashboard</button>
+      <button data-tab="users">Users</button>
+      <button data-tab="logins">Login records</button>
+      <button data-tab="messages">Messages</button>
+    </nav>
+    <div class="side-foot">
+      <a href="index.html">Back to website</a>
+      <button id="logout">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <h1 id="page-title">Dashboard</h1>
+      <div class="me"><span class="avatar" id="me-avatar">A</span><span id="me-name"></span></div>
+    </header>
+    <div class="alert" id="alert" hidden></div>
+
+    <section class="tab active" id="tab-dashboard">
+      <div class="stats" id="stats"></div>
+      <div class="two">
+        <div class="panel">
+          <h2>Logins in the last 7 days</h2>
+          <div class="bars" id="bars"></div>
+          <p class="legend"><span class="dot ok"></span> Successful <span class="dot fail"></span> Failed</p>
+        </div>
+        <div class="panel">
+          <h2>Newest users</h2>
+          <ul class="list" id="new-users"></ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Recent logins</h2>
+        <div class="table-wrap"><table id="recent-logins"></table></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-users">
+      <div class="panel">
+        <div class="panel-head"><h2>All users <span class="count" id="users-count"></span></h2>
+          <input class="search" id="users-search" placeholder="Search name, email, phone, city…" /></div>
+        <div class="table-wrap"><table id="users-table"></table></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-logins">
+      <div class="panel">
+        <div class="panel-head"><h2>Login records <span class="count" id="logins-count"></span></h2>
+          <input class="search" id="logins-search" placeholder="Search email, phone, IP…" /></div>
+        <div class="table-wrap"><table id="logins-table"></table></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-messages">
+      <div class="panel-head plain"><h2>Contact messages <span class="count" id="messages-count"></span></h2>
+        <input class="search" id="messages-search" placeholder="Search messages…" /></div>
+      <div class="msgs" id="msgs"></div>
+    </section>
+  </main>
+</div>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

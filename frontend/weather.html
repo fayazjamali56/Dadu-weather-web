@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather — Dadu Weather</title>
+<meta name="description" content="Hourly and 7-day weather forecast." />
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/weather.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html"><span class="mark"></span> Dadu Weather</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="register.html">Register</a>
+      <a class="btn btn-primary" href="login.html">Login</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+  </div>
+</header>
+<div class="ajrak-strip"></div>
+
+<main>
+  <section class="detail-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <span data-detail-name>Location</span></p>
+      <div class="weather-error-banner" data-error-banner style="display:none;"></div>
+      <div class="detail-hero-grid">
+        <div class="detail-hero-figure">
+          <img data-detail-image src="" alt="" onerror="this.closest('.detail-hero-figure').style.background='var(--indigo-500)'; this.style.display='none';" />
+        </div>
+        <div>
+          <div class="detail-title-row"><h1 data-detail-name>Location</h1></div>
+          <p class="detail-sub" data-detail-place>Location, Sindh, Pakistan</p>
+          <div class="detail-now">
+            <span data-now-icon></span>
+            <div>
+              <div class="value" data-now-temp>--</div>
+              <div class="cond" data-now-cond>Loading…</div>
+              <div class="feels" data-now-feels></div>
+            </div>
+          </div>
+          <div class="hi-lo">
+            <span>High <strong data-now-high>--</strong></span>
+            <span>Low <strong data-now-low>--</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Weather details</h2></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="label">💧 Humidity</div><div class="value" data-stat="humidity">--</div></div>
+        <div class="stat-card"><div class="label">🌬 Wind</div><div class="value" data-stat="wind">--</div></div>
+        <div class="stat-card"><div class="label">🧭 Pressure</div><div class="value" data-stat="pressure">--</div></div>
+        <div class="stat-card"><div class="label">☔ Rain chance</div><div class="value" data-stat="rain">--</div></div>
+        <div class="stat-card"><div class="label">🌫 Cloud cover</div><div class="value" data-stat="cloud">--</div></div>
+        <div class="stat-card"><div class="label">☀ UV index</div><div class="value" data-stat="uv">--</div></div>
+        <div class="stat-card"><div class="label">🌅 Sunrise</div><div class="value" data-stat="sunrise">--</div></div>
+        <div class="stat-card"><div class="label">🌇 Sunset</div><div class="value" data-stat="sunset">--</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Next 24 hours</h2></div>
+      <div class="hourly-scroll" data-hourly></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>7-day forecast</h2></div>
+      <div class="forecast-list" data-forecast></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-fine">© <span data-year></span> Dadu Weather. Created by Fayaz Jamali. Weather data via Open-Meteo.</p>
+  </div>
+</footer>
+
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/weather.js"></script>
+<script src="assets/js/main.js"></script>
+<script>renderDetailPage();</script>
+</body>
+</html>

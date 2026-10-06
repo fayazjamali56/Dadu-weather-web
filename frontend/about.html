@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Dadu Weather</title>
+<meta name="description" content="Why Dadu Weather focuses on Dadu District and how the forecast data works." />
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html"><span class="mark"></span> Dadu Weather</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="register.html">Register</a>
+      <a class="btn btn-primary" href="login.html">Login</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="register.html">Register</a><a href="login.html">Login</a>
+  </div>
+</header>
+<div class="ajrak-strip"></div>
+
+<main>
+  <section class="section">
+    <div class="container prose" style="max-width:70ch;">
+      <h1>About Dadu Weather</h1>
+      <p>Dadu Weather is a regional weather platform built specifically for Dadu District, Sindh — Dadu town itself, and the towns around it: Johi, Wahi Pandhi, Bhan Syedabad, Mehar, and Khairpur Nathan Shah, plus nearby cities like Moro, Sehwan Sharif, Larkana, and Jamshoro.</p>
+
+      <h2>Why focus on Dadu District?</h2>
+      <p>Most general weather apps treat small Sindh towns as an afterthought, if they list them at all. This site starts from the opposite direction: Dadu District is the default view, and the rest of the world is out of scope for now.</p>
+
+      <h2>Supported locations</h2>
+      <p>The current list covers the district's main towns and a handful of neighbouring cities. It's built from a single, expandable location file, so new towns and villages can be added over time without rebuilding the site.</p>
+
+      <h2>Where the weather data comes from</h2>
+      <p>Current conditions, hourly forecasts, and the 7-day outlook are fetched live for each location's coordinates — nothing is hard-coded. If a request fails, the site says so plainly rather than showing a guessed number.</p>
+
+      <h2>What's next</h2>
+      <p>Planned additions include favourite locations for registered users, severe weather alerts, temperature and rainfall charts, Sindhi and Urdu language support, and a home-screen app experience.</p>
+
+      <p class="creator-line">Created by <strong>Fayaz Jamali</strong>, Dadu, Sindh, Pakistan.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p class="footer-fine">© <span data-year></span> Dadu Weather. Created by Fayaz Jamali.</p></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dadu Weather — Real-Time Weather Forecast for Dadu, Sindh</title>
+<meta name="description" content="Live weather, hourly forecasts, and 7-day outlooks for Dadu District and nearby towns in Sindh — Johi, Wahi Pandhi, Bhan, Mehar, Moro, Sehwan, and more." />
+<meta property="og:title" content="Dadu Weather — Real-Time Weather Forecast for Dadu, Sindh" />
+<meta property="og:description" content="Live, real-time weather for Dadu District and surrounding Sindh towns." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-logo" href="index.html"><span class="mark"></span> Dadu Weather</a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="register.html">Register</a>
+      <a class="btn btn-primary" href="login.html">Login</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+  </div>
+</header>
+<div class="ajrak-strip"></div>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-eyebrow">Dadu District &amp; surrounding Sindh</p>
+        <h1>Real-time weather of Dadu &amp; surrounding Sindh</h1>
+        <p class="lead">
+          Current conditions, hourly outlooks, and 7-day forecasts for
+          Dadu District and nearby towns — updated live from open weather
+          data, with nothing hard-coded.
+        </p>
+        <div class="location-search">
+          <input type="text" id="hero-search" placeholder="Search a town — Johi, Mehar, Moro…" aria-label="Search for a location" />
+          <div class="results" id="hero-search-results"></div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#locations">Browse locations</a>
+          <a class="btn btn-ghost" href="about.html">How this works</a>
+        </div>
+      </div>
+      <div class="hero-now">
+        <div class="ajrak-strip"></div>
+        <div class="hero-now-body" id="hero-now">
+          <div class="skeleton skeleton-line" style="width:40%"></div>
+          <div class="skeleton skeleton-block" style="margin:14px 0"></div>
+          <div class="skeleton skeleton-line" style="width:80%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="locations">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Dadu District at a glance</h2>
+          <p>Live conditions for the district's main towns.</p>
+        </div>
+      </div>
+      <div class="card-grid" id="card-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="nav-logo" href="index.html" style="color:var(--cotton-100)"><span class="mark"></span> Dadu Weather</a>
+        <p style="max-width:32ch;margin-top:12px;">Real-time weather for Dadu District and nearby Sindh, built with a local point of view.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <ul><li><a href="register.html">Register</a></li><li><a href="login.html">Login</a></li></ul>
+      </div>
+    </div>
+    <p class="footer-fine">© <span data-year></span> Dadu Weather. Created by Fayaz Jamali. Weather data via Open-Meteo.</p>
+  </div>
+</footer>
+
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/weather.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  const dadu = getLocationBySlug("dadu");
+  renderHeroNow(document.getElementById("hero-now"), dadu);
+  renderLocationCardGrid(document.getElementById("card-grid"), getFeaturedLocations());
+  attachLocationSearch(document.getElementById("hero-search"), document.getElementById("hero-search-results"));
+</script>
+</body>
+</html>
