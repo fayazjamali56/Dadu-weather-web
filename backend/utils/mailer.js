@@ -1,4 +1,8 @@
-const sendEmail = async (to, subject, html) => {
+const sendEmail = async ({ to, subject, text }) => {
+  if (!process.env.BREVO_API_KEY || !process.env.BREVO_SENDER_EMAIL) {
+    return false; // email set up nahi hai
+  }
+
   const response = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
@@ -9,13 +13,15 @@ const sendEmail = async (to, subject, html) => {
       sender: { name: "Dadu-Weather", email: process.env.BREVO_SENDER_EMAIL },
       to: [{ email: to }],
       subject: subject,
-      htmlContent: html,
+      textContent: text,
     }),
   });
 
   if (!response.ok) {
     throw new Error(await response.text());
   }
+  return true;
 };
 
 module.exports = sendEmail;
+module.exports.sendMail = sendEmail;
