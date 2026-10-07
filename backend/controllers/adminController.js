@@ -1,7 +1,7 @@
 const adminModel = require("../models/adminModel");
 const userModel = require("../models/userModel");
 const asyncHandler = require("../utils/asyncHandler");
-const sendEmail = require("../utils/mailer");
+const { sendMail } = require("../utils/mailer");
 
 exports.stats = asyncHandler(async (req, res) => res.json(await adminModel.stats()));
 exports.users = asyncHandler(async (req, res) => res.json(await userModel.listAll()));
@@ -18,7 +18,7 @@ exports.reply = asyncHandler(async (req, res) => {
 
   let emailed = false;
   try {
-    emailed = await sendEmail({
+    emailed = await sendMail({
       to: msg.email,
       subject: "Re: " + msg.subject,
       text: `${text}\n\n---\nYour message:\n${msg.message}`,
