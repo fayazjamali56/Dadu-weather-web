@@ -69,7 +69,7 @@ function initLoginForm(form) {
     },
     successMsg: "Logged in. Taking you home…",
     onSuccess: (data, form, body) => {
-      const store = body.remember ? localStorage : sessionStorage;
+      const store = localStorage;
       store.setItem("dw_token", data.token);
       store.setItem("dw_user", JSON.stringify(data.user));
       setTimeout(() => (location.href = "index.html"), 900);
