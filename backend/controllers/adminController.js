@@ -18,7 +18,7 @@ exports.reply = asyncHandler(async (req, res) => {
 
   let emailed = false;
   try {
-    emailed = await sendMail({
+    emailed = await sendEmail({
       to: msg.email,
       subject: "Re: " + msg.subject,
       text: `${text}\n\n---\nYour message:\n${msg.message}`,
