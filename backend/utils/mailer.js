@@ -1,13 +1,21 @@
-const nodemailer = require("nodemailer");
-
-let transporter;
-
-exports.sendMail = async ({ to, subject, text }) => {
-  if (!process.env.MAIL_USER || !process.env.MAIL_PASS) return false;
-  transporter = transporter || nodemailer.createTransport({
-    service: "gmail",
-    auth: { user: process.env.MAIL_USER, pass: process.env.MAIL_PASS },
+const sendEmail = async (to, subject, html) => {
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      "api-key": process.env.BREVO_API_KEY,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: { name: "Dadu-Weather", email: process.env.BREVO_SENDER_EMAIL },
+      to: [{ email: to }],
+      subject: subject,
+      htmlContent: html,
+    }),
   });
-  await transporter.sendMail({ from: `"Dadu Weather" <${process.env.MAIL_USER}>`, to, subject, text });
-  return true;
+
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
 };
+
+module.exports = sendEmail;
