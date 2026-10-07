@@ -1,7 +1,7 @@
 const adminModel = require("../models/adminModel");
 const userModel = require("../models/userModel");
 const asyncHandler = require("../utils/asyncHandler");
-const { sendMail } = require("../utils/mailer");
+const sendEmail = require("../utils/mailer");
 
 exports.stats = asyncHandler(async (req, res) => res.json(await adminModel.stats()));
 exports.users = asyncHandler(async (req, res) => res.json(await userModel.listAll()));
